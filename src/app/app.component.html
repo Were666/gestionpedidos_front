@@ -5,11 +5,30 @@
     <th>Nombre Camarero</th>
   </tr>
   <tr *ngFor="let camarero of camareros">
-    <td>{{camarero.id}}</td>
+    <td>{{camarero.codigo}}</td>
     <td>{{camarero.nombre}}</td>
   </tr>
 </table>
 <hr>
+
+<h2>Listado de Pedidos</h2>
+<table>
+  <tr>
+    <th>Código</th>
+    <th>Fecha</th>
+    <th>Camarero</th>
+    <th>Mesa</th>
+  </tr>
+  <tr *ngFor="let pedido of pedidos">
+    <td>{{pedido.id}}</td>
+    <td>{{pedido.fecha}}</td>
+    <td>{{pedido.camarero.nombre}}</td>
+    <td>{{pedido.mesa}}</td>
+  </tr>
+</table>
+
+<hr>
+
 <h2>Listado de Productos</h2>
 <table>
   <tr>

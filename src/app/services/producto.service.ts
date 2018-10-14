@@ -6,7 +6,7 @@ import { Producto }         from "../model/producto";
 @Injectable()
 export class ProductoService {
 
-    URL = 'http://localhost:8080/productos';
+    URL = 'https://pedi-gest.herokuapp.com/api/productos';
 
     constructor(private http:HttpClient){
 
