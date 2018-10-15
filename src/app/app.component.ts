@@ -2,6 +2,7 @@ import { Component, OnInit }          from '@angular/core';
 import { CamareroService }            from './services/camarero.service';
 import { ProductoService } from './services/producto.service';
 import { PedidoService } from './services/pedido.service';
+import { Pagina } from './model/pagina';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,7 @@ export class AppComponent implements OnInit {
   camareros;
   productos;
   pedidos;
-  pagina;
+  pagina:Pagina;
   
   // En Angular la inyección se lleva a cabo a través del construcor
   constructor(private camareroService: CamareroService,
@@ -34,10 +35,10 @@ export class AppComponent implements OnInit {
     this.pedidoService.getAll().subscribe(pedidos => {
       this.pedidos = pedidos;
     });
-    /*
+    
     this.productoService.getPage(1,10).subscribe(pagina => {
       this.pagina = pagina;
     });
-    */
+    
   }
 }

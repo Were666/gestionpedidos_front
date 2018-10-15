@@ -1,7 +1,7 @@
-/*import { Producto }             from "./producto";*/
+import { Producto }             from "./producto";
 
 export class Pagina {
-    /*
+    
     elementos:Producto[] = []; 
     numeroElementos:number;
     numeroPagina:number;
@@ -9,5 +9,5 @@ export class Pagina {
     numeroTotalPaginas:number;
     primeraPagina:boolean;
     ultimaPagina:boolean;
-    */
+    
 } 

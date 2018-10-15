@@ -1,3 +1,7 @@
+<div class="container">
+
+
+
 <h2>Listado de Camareros</h2>
 <table>
   <tr>
@@ -30,6 +34,11 @@
 <hr>
 
 <h2>Listado de Productos</h2>
+<p>Página: {{pagina.numeroPagina}}</p>
+<p>Número de elementos: {{pagina.numeroElementos}}</p>
+<p>Número total de productos: {{pagina.numeroTotalElementos}}</p>
+<p>Primera página: {{pagina.primeraPagina}}</p>
+<p>Última página: {{pagina.ultimaPagina}}</p>
 <table>
   <tr>
     <th>Código</th>
@@ -39,7 +48,7 @@
     <th>Descripción</th>
     <th>Descatalogado</th>
   </tr>
-  <tr *ngFor="let producto of productos">
+  <tr *ngFor="let producto of pagina.elementos">
     <td>{{producto.codigo}}</td>
     <td>{{producto.nombre}}</td>
     <td>{{producto.precio | currency:'EUR'}}</td>
@@ -48,3 +57,5 @@
     <td>{{producto.descatalogado}}</td>
   </tr>
 </table>
+
+</div>
