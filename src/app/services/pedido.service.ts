@@ -12,10 +12,9 @@ export class PedidoService {
     constructor(private http:HttpClient){
 
     }
-
+    
     getAll(): Observable<Pedido> {
         return this.http.get<Pedido>(this.URL);
     }
-
-    
+     
 }

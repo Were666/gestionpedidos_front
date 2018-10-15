@@ -14,6 +14,7 @@ export class AppComponent implements OnInit {
   camareros;
   productos;
   pedidos;
+  pagina;
   
   // En Angular la inyección se lleva a cabo a través del construcor
   constructor(private camareroService: CamareroService,
@@ -33,15 +34,10 @@ export class AppComponent implements OnInit {
     this.pedidoService.getAll().subscribe(pedidos => {
       this.pedidos = pedidos;
     });
-
     /*
-    this.productoService.getAll().subscribe(productos => {
-      this.productos = productos;
-    })
+    this.productoService.getPage(1,10).subscribe(pagina => {
+      this.pagina = pagina;
+    });
     */
-
-
-
-
   }
 }
