@@ -25,7 +25,7 @@
   </tr>
   <tr *ngFor="let pedido of pedidos">
     <td>{{pedido.id}}</td>
-    <td>{{pedido.fecha}}</td>
+    <td>{{pedido.fecha | date:'dd/MMM/yyyy'}}</td>
     <td>{{pedido.camarero.nombre}}</td>
     <td>{{pedido.mesa}}</td>
   </tr>
