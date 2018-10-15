@@ -1,8 +1,8 @@
 import { Component, OnInit }          from '@angular/core';
 import { CamareroService }            from './services/camarero.service';
-import { ProductoService } from './services/producto.service';
-import { PedidoService } from './services/pedido.service';
-import { Pagina } from './model/pagina';
+import { ProductoService }            from './services/producto.service';
+import { PedidoService }              from './services/pedido.service';
+
 
 @Component({
   selector: 'app-root',
@@ -13,13 +13,10 @@ export class AppComponent implements OnInit {
 
   // Atributos que "pintaremos" en el HTML
   camareros;
-  productos;
   pedidos;
-  pagina:Pagina;
-  
+
   // En Angular la inyección se lleva a cabo a través del construcor
   constructor(private camareroService: CamareroService,
-              private productoService: ProductoService,
               private pedidoService: PedidoService){}
 
   // Cuando se crea el componente buscamos los datos...
@@ -35,10 +32,6 @@ export class AppComponent implements OnInit {
     this.pedidoService.getAll().subscribe(pedidos => {
       this.pedidos = pedidos;
     });
-    
-    this.productoService.getPage(1,10).subscribe(pagina => {
-      this.pagina = pagina;
-    });
-    
+  
   }
 }

@@ -3,6 +3,8 @@ import { BrowserModule }                      from '@angular/platform-browser';
 import { NgModule }                           from '@angular/core';
 import { HttpClientModule }                   from '@angular/common/http';
 import { NgbModule }                          from '@ng-bootstrap/ng-bootstrap';
+import { NgbPaginationModule}                 from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 
 // Componentes
 import { AppComponent }                       from './app.component';
@@ -19,13 +21,16 @@ import { ProductoService }                    from './services/producto.service'
 @NgModule({
   declarations: [
     AppComponent,
-    ListadoCamarerosComponent
-    
+    ListadoCamarerosComponent,
+    ListadoProductosPaginadoComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    NgbPaginationModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [CamareroService, ProductoService, PedidoService],
   bootstrap: [AppComponent]

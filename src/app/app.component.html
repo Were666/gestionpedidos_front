@@ -1,63 +1,43 @@
 <div class="container">
 
+  <listado-productos-paginado></listado-productos-paginado>
 
+  <h2>Listado de Camareros</h2>
 
-<h2>Listado de Camareros</h2>
-<table class="table">
-  <tr>
-    <th>ID</th>
-    <th>Nombre Camarero</th>
-  </tr>
-  <tr *ngFor="let camarero of camareros">
-    <td>{{camarero.codigo}}</td>
-    <td>{{camarero.nombre}}</td>
-  </tr>
-</table>
-<hr>
+  <table class="table">
+    <tr>
+      <th>ID</th>
+      <th>Nombre Camarero</th>
+    </tr>
+    <tr *ngFor="let camarero of camareros">
+      <td>{{camarero.codigo}}</td>
+      <td>{{camarero.nombre}}</td>
+    </tr>
+  </table>
 
-<h2>Listado de Pedidos</h2>
-<table class="table">
-  <tr>
-    <th>Código</th>
-    <th>Fecha</th>
-    <th>Hora</th>
-    <th>Camarero</th>
-    <th>Mesa</th>
-  </tr>
-  <tr *ngFor="let pedido of pedidos">
-    <td>{{pedido.id}}</td>
-    <td>{{pedido.fecha | date:'dd/MMM/yyyy'}}</td>
-    <td>{{pedido.fecha | date:'HH:mm'}}</td>
-    <td>{{pedido.camarero.nombre}}</td>
-    <td>{{pedido.mesa}}</td>
-  </tr>
-</table>
+  <hr>
 
-<hr>
+  <h2>Listado de Pedidos</h2>
 
-<h2>Listado de Productos</h2>
-<p>Página: {{pagina.numeroPagina}}</p>
-<p>Número de elementos: {{pagina.numeroElementos}}</p>
-<p>Número total de productos: {{pagina.numeroTotalElementos}}</p>
-<p>Primera página: {{pagina.primeraPagina}}</p>
-<p>Última página: {{pagina.ultimaPagina}}</p>
-<table class="table">
-  <tr>
-    <th>Código</th>
-    <th>Nombre</th>
-    <th>Precio</th>
-    <th>Fecha de Alta</th>
-    <th>Descripción</th>
-    <th>Descatalogado</th>
-  </tr>
-  <tr *ngFor="let producto of pagina.elementos">
-    <td>{{producto.codigo}}</td>
-    <td>{{producto.nombre}}</td>
-    <td>{{producto.precio | currency:'EUR'}}</td>
-    <td>{{producto.fechaAlta | date:'dd/MMM/yyyy'}}</td>
-    <td>{{producto.descripcion}}</td>
-    <td>{{producto.descatalogado}}</td>
-  </tr>
-</table>
+  <table class="table">
+    <tr>
+      <th>Código</th>
+      <th>Fecha</th>
+      <th>Hora</th>
+      <th>Camarero</th>
+      <th>Mesa</th>
+    </tr>
+    <tr *ngFor="let pedido of pedidos">
+      <td>{{pedido.id}}</td>
+      <td>{{pedido.fecha | date:'dd/MMM/yyyy'}}</td>
+      <td>{{pedido.fecha | date:'HH:mm'}}</td>
+      <td>{{pedido.camarero.nombre}}</td>
+      <td>{{pedido.mesa}}</td>
+    </tr>
+  </table>
+
+  <hr>
+
+  
 
 </div>
