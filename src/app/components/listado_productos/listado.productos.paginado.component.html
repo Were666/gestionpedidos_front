@@ -1,21 +1,22 @@
 <h2>Listado de Productos Paginado</h2>
-<!--<pre>Current page: {{page}}</pre> -->
-<ngb-pagination (pageChange)="hazEsto(this)" [collectionSize]="50" [(page)]="page" [boundaryLinks]="true"></ngb-pagination>
-<table *ngIf="pagina" class="table">
-  <tr>
-    <th>Código</th>
-    <th>Nombre</th>
-    <th>Precio</th>
-    <th>Fecha de Alta</th>
-    <th>Descripción</th>
-    <th>Descatalogado</th>
-  </tr>
-  <tr *ngFor="let producto of pagina.elementos">
-    <td>{{producto.codigo}}</td>
-    <td>{{producto.nombre}}</td>
-    <td>{{producto.precio | currency:'EUR'}}</td>
-    <td>{{producto.fechaAlta | date:'dd/MMM/yyyy'}}</td>
-    <td>{{producto.descripcion}}</td>
-    <td>{{producto.descatalogado}}</td>
-  </tr>
-</table>
+<div *ngIf="pagina">
+  <ngb-pagination (pageChange)="setPage($event)" [collectionSize]="pagina.numeroTotalElementos" [(page)]="page" [boundaryLinks]="true"></ngb-pagination>
+  <table class="table">
+    <tr>
+      <th>Código</th>
+      <th>Nombre</th>
+      <th>Precio</th>
+      <th>Fecha de Alta</th>
+      <th>Descripción</th>
+      <th>Descatalogado</th>
+    </tr>
+    <tr *ngFor="let producto of pagina.elementos">
+      <td>{{producto.codigo}}</td>
+      <td>{{producto.nombre}}</td>
+      <td>{{producto.precio | currency:'EUR'}}</td>
+      <td>{{producto.fechaAlta | date:'dd/MMM/yyyy'}}</td>
+      <td>{{producto.descripcion}}</td>
+      <td>{{producto.descatalogado}}</td>
+    </tr>
+  </table>
+</div>

@@ -10,11 +10,10 @@ import { Pagina }                           from 'src/app/model/pagina';
   })
 export class ListadoProductosPaginadoComponent implements OnInit {
 
-    pagina:Pagina;
-
-    page:number = 4;
-    collectionSize:number = 10;
-
+    pagina:Pagina = undefined;
+    
+    page:number = 1;
+    elementosPorPagina: number = 10;
     constructor( private productoService: ProductoService){}
 
     ngOnInit(): void {
@@ -22,12 +21,14 @@ export class ListadoProductosPaginadoComponent implements OnInit {
     }
 
     read(): void {
-        this.productoService.getPage(this.page, this.collectionSize).subscribe(pagina => {
+        this.productoService.getPage(this.page -1, this.elementosPorPagina)
+        .subscribe(pagina => {
             this.pagina = pagina;
         });
     }
 
-    hazEsto(datos): void {
+    setPage(evento): void {
+        this.page = evento;
         this.read();
     }
     
