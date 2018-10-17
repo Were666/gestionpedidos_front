@@ -3,7 +3,7 @@ export class Producto{
     nombre:string;
     descripcion: number;
     fechaAlta: Date;
-    familia: string;
+    categoria: string;
     precio: number;
     descatalogado: boolean;
 }

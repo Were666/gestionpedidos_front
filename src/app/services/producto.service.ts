@@ -17,5 +17,16 @@ export class ProductoService {
         const params = new HttpParams().set("page",String(page)).set("size",String(size));
         return this.http.get<Pagina>(this.URL,{params});
     }
+
+    create(producto:Producto): Observable<Producto> {
+
+        const httpOptions = {
+            headers: new HttpHeaders({
+                'Content-Type': 'application/json'
+            })
+        };
+
+        return this.http.post<Producto>(this.URL, producto, httpOptions);
+    }
     
 }
