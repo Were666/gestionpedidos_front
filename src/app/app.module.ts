@@ -1,16 +1,18 @@
 // Modulos
 import { BrowserModule }                      from '@angular/platform-browser';
-import { NgModule }                           from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA }                           from '@angular/core';
 import { HttpClientModule }                   from '@angular/common/http';
 import { AppRoutingModule }                   from './app-routing.module';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { ServiceWorkerModule }                from '@angular/service-worker';
 
+// Modulos de material
 import { BrowserAnimationsModule }            from '@angular/platform-browser/animations';
 import { MatPaginatorModule }                 from '@angular/material/paginator';
 import { MatFormFieldModule }                 from '@angular/material/form-field';
-import { MatInputModule }                     from '@angular/material';
+import { MatInputModule, MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatTableModule, MatSortModule }                     from '@angular/material';
 import { MatMenuModule }                      from '@angular/material/menu';
+import { LayoutModule }                       from '@angular/cdk/layout';
 
 // Componentes
 import { AppComponent }                       from './app.component';
@@ -19,8 +21,8 @@ import { AltaProductoComponent }              from './components/alta_producto/a
 import { ListadoPedidosComponent }            from './components/listado-pedidos/listado-pedidos.component';
 import { ListadoProductosPaginadoComponent }  from './components/listado_productos/listado.productos.paginado.component';
 import { AboutComponent }                     from './components/about/about.component';
-
 import { FichaProductoComponent }             from './components/ficha-producto/ficha-producto.component';
+import { MyNavComponent }                     from './components/my-nav/my-nav.component';
 
 // Servicios
 import { CamareroService }                    from './services/camarero.service';
@@ -31,6 +33,10 @@ import { ProductoService }                    from './services/producto.service'
 // Environment?
 import { environment }                        from '../environments/environment';
 
+
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +45,8 @@ import { environment }                        from '../environments/environment'
     AltaProductoComponent,
     AboutComponent,
     ListadoPedidosComponent,
-    FichaProductoComponent
+    FichaProductoComponent,
+    MyNavComponent
   ],
   imports: [
     BrowserModule,
@@ -52,9 +59,18 @@ import { environment }                        from '../environments/environment'
     MatPaginatorModule,
     MatFormFieldModule,
     MatInputModule,
-    MatMenuModule
+    MatMenuModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+    MatTableModule,
+    MatSortModule
   ],
   providers: [CamareroService, ProductoService, PedidoService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
