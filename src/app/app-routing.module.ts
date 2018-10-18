@@ -4,6 +4,7 @@ import { AltaProductoComponent }                from './components/alta_producto
 import { ListadoCamarerosComponent }            from './components/listado_camareros/listado.camareros.component';
 import { ListadoProductosPaginadoComponent }    from './components/listado_productos/listado.productos.paginado.component';
 import { AboutComponent }                       from './components/about/about.component';
+import { ListadoPedidosComponent }              from './components/listado-pedidos/listado-pedidos.component';
 
 const routes: Routes = [
 
@@ -11,6 +12,7 @@ const routes: Routes = [
     { path: 'about', component: AboutComponent },
     { path: 'altaproducto', component: AltaProductoComponent },
     { path: 'listadocamareros', component: ListadoCamarerosComponent },
+    { path: 'listadopedidos', component: ListadoPedidosComponent },
     { path: 'paginaproductos', component: ListadoProductosPaginadoComponent },
 //  { path: 'detailsproducto/:id', component: EditProductoComponent },
     { path: '**', component: AboutComponent } //404 todo component

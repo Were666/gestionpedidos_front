@@ -1,1 +1,12 @@
-<h2>Listado Paginado de Productos</h2>
+<h2>Listado de Camareros</h2>
+
+<table class="table">
+  <tr>
+    <th>ID</th>
+    <th>Nombre Camarero</th>
+  </tr>
+  <tr *ngFor="let camarero of camareros">
+    <td>{{camarero.codigo}}</td>
+    <td>{{camarero.nombre}}</td>
+  </tr>
+</table>

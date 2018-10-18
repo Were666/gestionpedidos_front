@@ -12,6 +12,7 @@ import { ServiceWorkerModule }                from '@angular/service-worker';
 import { AppComponent }                       from './app.component';
 import { ListadoCamarerosComponent }          from './components/listado_camareros/listado.camareros.component';
 import { AltaProductoComponent }              from './components/alta_producto/alta.producto.component';
+import { ListadoPedidosComponent }            from './components/listado-pedidos/listado-pedidos.component';
 import { ListadoProductosPaginadoComponent }  from './components/listado_productos/listado.productos.paginado.component';
 import { AboutComponent }                     from './components/about/about.component';
 
@@ -23,13 +24,15 @@ import { ProductoService }                    from './services/producto.service'
 // Environment?
 import { environment }                        from '../environments/environment';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     ListadoCamarerosComponent,
     ListadoProductosPaginadoComponent,
     AltaProductoComponent,
-    AboutComponent
+    AboutComponent,
+    ListadoPedidosComponent
   ],
   imports: [
     BrowserModule,
