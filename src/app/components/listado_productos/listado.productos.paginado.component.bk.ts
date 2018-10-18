@@ -1,5 +1,4 @@
 import { Component, OnInit }                from '@angular/core';
-import { NgModule }                         from '@angular/core';
 import { ProductoService }                  from 'src/app/services/producto.service';
 import { Pagina }                           from 'src/app/model/pagina';
 

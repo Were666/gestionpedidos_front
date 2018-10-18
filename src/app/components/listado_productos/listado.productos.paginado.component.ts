@@ -1,4 +1,5 @@
 import { Component, OnInit }                from '@angular/core';
+import { PageEvent }                        from '@angular/material';
 import { ProductoService }                  from 'src/app/services/producto.service';
 import { Pagina }                           from 'src/app/model/pagina';
 
@@ -8,28 +9,28 @@ import { Pagina }                           from 'src/app/model/pagina';
     styleUrls: ['./listado.productos.paginado.component.css']
   })
 export class ListadoProductosPaginadoComponent implements OnInit {
-
-    pagina:Pagina = undefined;
     
-    page:number = 1;
-    elementosPorPagina:number = 45;
+    pagina:Pagina = undefined;      // Nuestra página
+    
+    pageEvent: PageEvent;           // MatPaginator Output
+    pageSize = 10;                  // El valor inicial es 10
+    pageSizeOptions: number[] = [5, 10, 25];
 
     constructor(private productoService: ProductoService){}
 
     ngOnInit(): void {
-        this.read();    
+        this.getPageFromBackend(0, this.pageSize);
     }
 
-    read(): void {
-        this.productoService.getPage(1,10)
+    getServerData(evento?:PageEvent){
+        this.pageSize = evento.pageSize;
+        this.getPageFromBackend(evento.pageIndex, this.pageSize);
+    }
+
+    getPageFromBackend (pageNumber: number, pageSize: number): void {
+        this.productoService.getPage(pageNumber , pageSize)
         .subscribe(pagina => {
             this.pagina = pagina;
         });
     }
-
-    setPage(evento): void {
-        this.page = evento;
-        this.read();
-    }
-    
 }
