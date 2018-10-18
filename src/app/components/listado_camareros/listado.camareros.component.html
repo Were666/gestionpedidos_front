@@ -2,10 +2,12 @@
 <h2>Lista de Camareros</h2>
 
 <table class="table">
-  <tr>
-    <th>ID</th>
-    <th>Nombre Camarero</th>
-  </tr>
+  <thead class="thead-dark">
+    <tr>
+      <th>ID</th>
+      <th>Nombre Camarero</th> 
+    </tr>
+  </thead>
   <tr *ngFor="let camarero of camareros">
     <td>{{camarero.codigo}}</td>
     <td>{{camarero.nombre}}</td>

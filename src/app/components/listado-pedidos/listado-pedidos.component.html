@@ -3,6 +3,7 @@
 <h2>Listado de Pedidos</h2>
 
   <table class="table">
+    <thead class="thead-dark">
     <tr>
       <th>Código</th>
       <th>Fecha</th>
@@ -10,6 +11,7 @@
       <th>Camarero</th>
       <th>Mesa</th>
     </tr>
+    </thead>
     <tr *ngFor="let pedido of pedidos">
       <td>{{pedido.id}}</td>
       <td>{{pedido.fecha | date:'dd/MMM/yyyy'}}</td>

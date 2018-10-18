@@ -8,13 +8,15 @@
     </mat-paginator>
 
     <table class="table">
-      <tr>
-        <th>Código</th>
-        <th>Nombre</th>
-        <th>Catgoría</th>
-        <th>Precio</th>
-        <th>Fecha de Alta</th>
-      </tr>
+        <thead class="thead-dark">
+          <tr>
+            <th>Código</th>
+            <th>Nombre</th>
+            <th>Catgoría</th>
+            <th>Precio</th>
+          <th>Fecha de Alta</th>
+        </tr>
+      </thead>
       <tr *ngFor="let producto of pagina.elementos">
         <td><a [routerLink]="['/detalles',producto.codigo]">{{producto.codigo}}</a></td>
         <td>{{producto.nombre}}</td>
