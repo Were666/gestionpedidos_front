@@ -2,8 +2,6 @@
 import { BrowserModule }                      from '@angular/platform-browser';
 import { NgModule }                           from '@angular/core';
 import { HttpClientModule }                   from '@angular/common/http';
-import { NgbModule }                          from '@ng-bootstrap/ng-bootstrap';
-import { NgbPaginationModule}                 from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule }                   from './app-routing.module';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { ServiceWorkerModule }                from '@angular/service-worker';
@@ -16,6 +14,8 @@ import { ListadoPedidosComponent }            from './components/listado-pedidos
 import { ListadoProductosPaginadoComponent }  from './components/listado_productos/listado.productos.paginado.component';
 import { AboutComponent }                     from './components/about/about.component';
 
+import { FichaProductoComponent }             from './components/ficha-producto/ficha-producto.component';
+
 // Servicios
 import { CamareroService }                    from './services/camarero.service';
 import { PedidoService }                      from './services/pedido.service';
@@ -23,7 +23,6 @@ import { ProductoService }                    from './services/producto.service'
 
 // Environment?
 import { environment }                        from '../environments/environment';
-import { FichaProductoComponent } from './components/ficha-producto/ficha-producto.component';
 
 
 @NgModule({
@@ -39,11 +38,8 @@ import { FichaProductoComponent } from './components/ficha-producto/ficha-produc
   imports: [
     BrowserModule,
     HttpClientModule,
-    NgbModule,
-    NgbPaginationModule,
     FormsModule,
     AppRoutingModule,
-
     ReactiveFormsModule, // WTF?
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }) // WTF?
   ],
