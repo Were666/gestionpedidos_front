@@ -14,15 +14,14 @@ export class ListadoProductosPaginadoComponent implements OnInit {
     
     page:number = 1;
     elementosPorPagina:number = 45;
-
-    constructor(private productoService: ProductoService){}
+    constructor( private productoService: ProductoService){}
 
     ngOnInit(): void {
         this.read();    
     }
 
     read(): void {
-        this.productoService.getPage(1,10)
+        this.productoService.getPage(this.page -1, this.elementosPorPagina)
         .subscribe(pagina => {
             this.pagina = pagina;
         });
