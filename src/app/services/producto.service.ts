@@ -18,6 +18,10 @@ export class ProductoService {
         return this.http.get<Pagina>(this.URL,{params});
     }
 
+    getByCodigo(codigo:number): Observable<Producto> {
+        return this.http.get<Producto>(this.URL + "/" + String(codigo));
+    }
+
     create(producto:Producto): Observable<Producto> {
 
         const httpOptions = {

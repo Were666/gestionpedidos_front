@@ -11,7 +11,7 @@
       <th>Descatalogado</th>
     </tr>
     <tr *ngFor="let producto of pagina.elementos">
-      <td>{{producto.codigo}}</td>
+      <td><a [routerLink] = "['/detalles',producto.codigo]">{{producto.codigo}}</a></td>
       <td>{{producto.nombre}}</td>
       <td>{{producto.precio | currency:'EUR'}}</td>
       <td>{{producto.fechaAlta | date:'dd/MMM/yyyy'}}</td>

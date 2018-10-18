@@ -23,6 +23,7 @@ import { ProductoService }                    from './services/producto.service'
 
 // Environment?
 import { environment }                        from '../environments/environment';
+import { FichaProductoComponent } from './components/ficha-producto/ficha-producto.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { environment }                        from '../environments/environment'
     ListadoProductosPaginadoComponent,
     AltaProductoComponent,
     AboutComponent,
-    ListadoPedidosComponent
+    ListadoPedidosComponent,
+    FichaProductoComponent
   ],
   imports: [
     BrowserModule,
