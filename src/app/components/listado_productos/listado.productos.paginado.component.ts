@@ -12,7 +12,7 @@ export class ListadoProductosPaginadoComponent implements OnInit {
     
     pagina:Pagina = undefined;      // Nuestra página
     
-    pageEvent: PageEvent;           // MatPaginator Output
+   // pageEvent: PageEvent;           // MatPaginator Output
     pageSize = 10;                  // El valor inicial es 10
     pageSizeOptions: number[] = [5, 10, 25];
 
@@ -22,7 +22,7 @@ export class ListadoProductosPaginadoComponent implements OnInit {
         this.getPageFromBackend(0, this.pageSize);
     }
 
-    getServerData(evento?:PageEvent){
+    getServerData(evento:PageEvent) {
         this.pageSize = evento.pageSize;
         this.getPageFromBackend(evento.pageIndex, this.pageSize);
     }

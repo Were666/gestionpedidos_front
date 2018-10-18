@@ -1,12 +1,15 @@
 <h2>Listado de Productos Paginado</h2>
 
+<div *ngIf="pagina">
+
 <mat-paginator  [length]="pagina.numeroTotalElementos"
                 [pageSize]="pageSize"
                 [pageSizeOptions]="pageSizeOptions"
-                (page)="pageEvent = getServerData($event)">
+                (page)="getServerData($event)">
+ <!--               (page)="pageEvent = getServerData($event)"> -->
 </mat-paginator>
 
-<table  *ngIf="pagina" class="table">
+<table class="table">
   <tr>
     <th>Código</th>
     <th>Nombre</th>
@@ -24,4 +27,6 @@
     <td>{{producto.descatalogado}}</td>
   </tr>
 </table>
+
+</div>
  
