@@ -11,6 +11,10 @@ import { PedidoService }              from './services/pedido.service';
 })
 export class AppComponent implements OnInit {
 
+
+  title = "Gestión Productos";
+
+ /*
   // Atributos que "pintaremos" en el HTML
   camareros;
   pedidos;
@@ -34,4 +38,5 @@ export class AppComponent implements OnInit {
     });
   
   }
+  */
 }

@@ -1,6 +1,6 @@
 <h2>Listado de Productos Paginado</h2>
 <div *ngIf="pagina">
-  <ngb-pagination (pageChange)="setPage($event)" [collectionSize]="pagina.numeroTotalElementos" [(page)]="page" [boundaryLinks]="true"></ngb-pagination>
+  <ngb-pagination (pageChange)="setPage($event)" [pageSize]="25"  [collectionSize]="pagina.numeroTotalElementos" [(page)]="page" [boundaryLinks]="true"></ngb-pagination>
   <table class="table">
     <tr>
       <th>Código</th>

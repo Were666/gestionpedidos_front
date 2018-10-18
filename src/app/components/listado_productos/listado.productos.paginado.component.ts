@@ -13,7 +13,7 @@ export class ListadoProductosPaginadoComponent implements OnInit {
     pagina:Pagina = undefined;
     
     page:number = 1;
-    elementosPorPagina: number = 10;
+    elementosPorPagina:number = 45;
     constructor( private productoService: ProductoService){}
 
     ngOnInit(): void {
