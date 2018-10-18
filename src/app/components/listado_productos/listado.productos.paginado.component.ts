@@ -10,10 +10,9 @@ import { Pagina }                           from 'src/app/model/pagina';
   })
 export class ListadoProductosPaginadoComponent implements OnInit {
     
-    pagina:Pagina = undefined;      // Nuestra página
+    pagina:Pagina = undefined;                  // Nuestra página
     
-   // pageEvent: PageEvent;           // MatPaginator Output
-    pageSize = 10;                  // El valor inicial es 10
+    pageSize = 10;                              // El valor inicial es 10
     pageSizeOptions: number[] = [5, 10, 25];
 
     constructor(private productoService: ProductoService){}
