@@ -10,6 +10,7 @@ import { BrowserAnimationsModule }            from '@angular/platform-browser/an
 import { MatPaginatorModule }                 from '@angular/material/paginator';
 import { MatFormFieldModule }                 from '@angular/material/form-field';
 import { MatInputModule }                     from '@angular/material';
+import { MatMenuModule }                      from '@angular/material/menu';
 
 // Componentes
 import { AppComponent }                       from './app.component';
@@ -29,7 +30,6 @@ import { ProductoService }                    from './services/producto.service'
 
 // Environment?
 import { environment }                        from '../environments/environment';
-
 
 @NgModule({
   declarations: [
@@ -51,7 +51,8 @@ import { environment }                        from '../environments/environment'
     BrowserAnimationsModule,
     MatPaginatorModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatMenuModule
   ],
   providers: [CamareroService, ProductoService, PedidoService],
   bootstrap: [AppComponent]

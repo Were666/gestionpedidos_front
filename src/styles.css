@@ -2,13 +2,6 @@
 @import 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css';
 
 
-/*
-
-Including a theme is required to apply all of the core and theme styles to your application.
-
-
-
-
-*/
+/*Including a theme is required to apply all of the core and theme styles to your application.*/
 
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
